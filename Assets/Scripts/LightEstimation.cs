@@ -43,14 +43,14 @@ public class LightEstimation : MonoBehaviour
         {
             float? averageBrightness = args.lightEstimation.averageBrightness.Value;
             light.intensity = averageBrightness.Value * lightBrightness;
-            print("averageBrightness>>>" + averageBrightness);
+            //print("averageBrightness>>>" + averageBrightness);
         }
         // ライトの色温度
         if (args.lightEstimation.averageColorTemperature.HasValue)
         {
             float? averageColorTemperature = args.lightEstimation.averageColorTemperature.Value;
             light.colorTemperature = averageColorTemperature.Value;
-            print("averageColorTemperature>>>" + averageColorTemperature);
+            //print("averageColorTemperature>>>" + averageColorTemperature);
         }
 
         // ライトの色
@@ -58,7 +58,7 @@ public class LightEstimation : MonoBehaviour
         {
             Color? colorCorrection = args.lightEstimation.colorCorrection.Value;
             light.color = colorCorrection.Value;
-            print("colorCorrection>>>" + colorCorrection);
+            //print("colorCorrection>>>" + colorCorrection);
         }
 
         // アンビエントの球面調和関数
@@ -67,7 +67,7 @@ public class LightEstimation : MonoBehaviour
             SphericalHarmonicsL2? sphericalHarmonics = args.lightEstimation.ambientSphericalHarmonics;
             RenderSettings.ambientMode = AmbientMode.Skybox;
             RenderSettings.ambientProbe = sphericalHarmonics.Value;
-            print("ambientSphericalHarmonics>>" + sphericalHarmonics);
+            //print("ambientSphericalHarmonics>>" + sphericalHarmonics);
         }
 
         // メインライトの方向
@@ -75,7 +75,7 @@ public class LightEstimation : MonoBehaviour
         {
             Vector3? mainLightDirection = args.lightEstimation.mainLightDirection;
             light.transform.rotation = Quaternion.LookRotation(mainLightDirection.Value);
-            print("mainLightDirection>>>" + mainLightDirection);
+            //print("mainLightDirection>>>" + mainLightDirection);
         }
 
         // メインライトの色
@@ -83,7 +83,7 @@ public class LightEstimation : MonoBehaviour
         {
             Color? mainLightColor = args.lightEstimation.mainLightColor;
             light.color = mainLightColor.Value;
-            print("mainLightColor>>>" + mainLightColor);
+            //print("mainLightColor>>>" + mainLightColor);
         }
 
         // メインライトの輝度
@@ -91,7 +91,7 @@ public class LightEstimation : MonoBehaviour
         {
             float? averageMainLightBrightness = args.lightEstimation.averageMainLightBrightness;
             light.intensity = averageMainLightBrightness.Value;
-            print("averageMainLightBrightness>>>" + averageMainLightBrightness);
+            //print("averageMainLightBrightness>>>" + averageMainLightBrightness);
         }
     }
 }

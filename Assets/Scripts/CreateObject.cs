@@ -24,6 +24,7 @@ public class CreateObject : MonoBehaviour
         // タッチ時
         if (Input.GetMouseButton(0) && count % 4 == 0)
         {
+            Debug.Log("タッチした");
             // レイと平面が交差した時
             if (raycastManager.Raycast(Input.GetTouch(0).position, hitResults, TrackableType.PlaneWithinPolygon))
             {
